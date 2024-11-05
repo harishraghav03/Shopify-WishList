@@ -30,3 +30,17 @@ model Session {
   collaborator  Boolean?  @default(false)
   emailVerified Boolean?  @default(false)
 }
+
+model Setting {
+  id            Int    @id @default(autoincrement())
+  name          String
+  description   String?
+}
+
+model Wishlist {
+  id          Int      @id @default(autoincrement())
+  customerId  String?
+  productId   String?
+  shop        String?
+  createAt    DateTime @default(now())
+}
