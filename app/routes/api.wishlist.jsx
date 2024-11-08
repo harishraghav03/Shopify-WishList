@@ -64,13 +64,13 @@ export async function action({ request }) {
     case "CREATE":
       // Handle POST request logic here
       // For example, adding a new item to the wishlist
-        await db.wishlist.create({
-            data: {
-            customerId,
-            productId,
-            shop,
-            },
-        });
+      const wishlist = await db.wishlist.create({
+        data: {
+          customerId,
+          productId,
+          shop,
+        },
+      });
 
       response = json({ message: "Product added to wishlist", method: _action, wishlisted: true });
       return cors(request, response);
@@ -78,7 +78,7 @@ export async function action({ request }) {
     case "PATCH":
       // Handle PATCH request logic here
       // For example, updating an existing item in the wishlist
-      return json({ message: "Success", method: "PATCH" });
+      return json({ message: "Success", method: "Patch" });
 
     case "DELETE":
       // Handle DELETE request logic here (Not tested)
