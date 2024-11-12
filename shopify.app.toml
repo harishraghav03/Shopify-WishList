@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7cda17f724822d008f1214140a6ee1b8"
+name = "RecoSys"
+handle = "recosys-2"
+application_url = "https://initiative-working-ch-pharmaceuticals.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://initiative-working-ch-pharmaceuticals.trycloudflare.com/auth/callback",
+  "https://initiative-working-ch-pharmaceuticals.trycloudflare.com/auth/shopify/callback",
+  "https://initiative-working-ch-pharmaceuticals.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[pos]
+embedded = false
+
+[build]
+dev_store_url = "recosysdev.myshopify.com"
+automatically_update_urls_on_dev = true
